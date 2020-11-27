@@ -1,6 +1,6 @@
 # Gazebo & ROS Simulator
 
-[![|Solid](https://www.streetdrone.com/wp-content/uploads/2020/05/ros-02.png)]
+![|Solid](https://www.streetdrone.com/wp-content/uploads/2020/05/ros-02.png)
 
 _________________
 ## Short Introduction
