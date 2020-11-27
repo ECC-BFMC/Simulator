@@ -1,6 +1,6 @@
 # Gazebo & ROS Simulator
 
-[![|Solid](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.generationrobots.com%2Fblog%2Fwp-content%2Fuploads%2F2016%2F07%2Fgazebo-and-ros.jpg&f=1&nofb=1)](http://gazebosim.org/tutorials)[![N|Solid](http://wiki.ros.org/custom/images/ros_org.png)](http://wiki.ros.org/)
+[![|Solid](https://www.streetdrone.com/wp-content/uploads/2020/05/ros-02.png)]
 
 _________________
 ## Short Introduction
