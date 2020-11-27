@@ -211,12 +211,12 @@ namespace gazebo
             {
                 case States::wait_for_car:
                         
-                    if(hasReached(this->m_rc_car_position, this->m_near_point, 0.1))            // If the car is close to the FIRST LANE
+                    if(hasReached(this->m_rc_car_position, this->m_near_point, 0.1))            // If the car is close to the NEAR LANE
                     {  
                         this->m_speed = calculateVelocity(1);
                         this->m_state = States::car_on_the_first_lane;
                     }
-                    else if(hasReached(this->m_rc_car_position, this->m_far_point, 0.1))        // If the car is close to the SECOND LANE
+                    else if(hasReached(this->m_rc_car_position, this->m_far_point, 0.1))        // If the car is close to the FAR LANE
                     {
                         this->m_speed = calculateVelocity(1);
                         this->m_state = States::car_on_the_second_lane;
@@ -260,7 +260,7 @@ namespace gazebo
                     {   
                         this->m_speed = calculateVelocity(0); // stop the pedestrian
                                                 
-                        if(timeChecker(this->m_timestamp, this->m_model->GetWorld()->SimTime(), 5)) // if 10 sec have passed
+                        if(timeChecker(this->m_timestamp, this->m_model->GetWorld()->SimTime(), 5)) // if 5 sec have passed
                         {
                             this->m_speed = calculateVelocity(1, false); // start the pedestrian backwards
                             this->m_state = States::return_to_the_left_side_of_the_road; // send it to start state
