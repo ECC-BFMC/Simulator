@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  
+  <!-- STOP SIGNS -->
+  <node
+        name  = "STOP_A"
+        pkg   = "gazebo_ros"
+        type  = "spawn_model"
+        args  = "-file $(find models_pkg)/stop_sign/model.sdf -sdf -model STOP_A -x 2.539 -y 1.463 -z 0.079 -R 0 -P 0 -Y 0"/>
+
+  <node
+        name  = "STOP_C"
+        pkg   = "gazebo_ros"
+        type  = "spawn_model"
+        args  = "-file $(find models_pkg)/stop_sign/model.sdf -sdf -model STOP_C -x 1.940 -y 2.325 -z 0.078998 -R 0  -P 0  -Y 3.141592"/>
+
+  <node
+        name  = "STOP_E"
+        pkg   = "gazebo_ros"
+        type  = "spawn_model"
+        args  = "-file $(find models_pkg)/stop_sign/model.sdf -sdf -model STOP_E -x 0.6993 -y 2.742 -z 0.078998 -R 0  -P 0  -Y 4.712388"/>
+
+  <node
+        name  = "STOP_G"
+        pkg   = "gazebo_ros"
+        type  = "spawn_model"
+        args  = "-file $(find models_pkg)/stop_sign/model.sdf -sdf -model STOP_G -x 1.560 -y 3.932 -z 0.078998 -R 0  -P 0  -Y 1.570796"/>
+
+  <node
+        name  = "STOP_W"
+        pkg   = "gazebo_ros"
+        type  = "spawn_model"
+        args  = "-file $(find models_pkg)/stop_sign/model.sdf -sdf -model STOP_W -x 12.603 -y 10.868 -z 0.078998 -R 0  -P 0  -Y 1.570796"/>
+
+</launch>

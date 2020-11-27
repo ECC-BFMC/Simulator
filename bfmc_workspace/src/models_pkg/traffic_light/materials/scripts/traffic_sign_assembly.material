@@ -1,0 +1,50 @@
+material RED_LENS
+{
+  technique
+  {
+    pass
+    {
+      ambient 1.0 1.0 1.0 1.0
+      diffuse 1.0 1.0 1.0 1.0
+      
+      texture_unit
+			{
+				texture red.png
+			}
+    }
+  }
+}
+
+material YELLOW_LENS
+{
+  technique
+  {
+    pass
+    {
+      ambient 1.0 1.0 1.0 1.0
+      diffuse 1.0 1.0 1.0 1.0
+      
+      texture_unit
+			{
+				texture yellow.png
+			}
+    }
+  }
+}
+
+material GREEN_LENS
+{
+  technique
+  {
+    pass
+    {
+      ambient 1.0 1.0 1.0 1.0
+      diffuse 1.0 1.0 1.0 1.0
+      
+      texture_unit
+			{
+				texture green.png
+			}
+    }
+  }
+}

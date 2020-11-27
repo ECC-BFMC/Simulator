@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- TRAFFIC LIGHTS -->
+  <node
+        name  = "TL0"
+        pkg   = "gazebo_ros"
+        type  = "spawn_model"
+        args  = "-file $(find models_pkg)/traffic_light/model.sdf -sdf -model TL0 -x 1.586 -y 1.002 -z 0 -R 0 -P 0 -Y 4.712388"/>
+
+  <node
+        name  = "TL1"
+        pkg   = "gazebo_ros"
+        type  = "spawn_model"
+        args  = "-file $(find models_pkg)/traffic_light/model.sdf -sdf -model TL1 -x 2.461 -y 4.328 -z 0 -R 0 -P 0 -Y 3.141592"/>
+
+  <node
+        name  = "TL2"
+        pkg   = "gazebo_ros"
+        type  = "spawn_model"
+        args  = "-file $(find models_pkg)/traffic_light/model.sdf -sdf -model TL2 -x 3.807 -y 3.896 -z 0 -R 0 -P 0 -Y 4.712388"/>
+  
+  <node
+        name  = "TL3"
+        pkg   = "gazebo_ros"
+        type  = "spawn_model"
+        args  = "-file $(find models_pkg)/traffic_light/model.sdf -sdf -model TL3 -x 4.243041 -y 5.257532 -z 0 -R 0 -P 0 -Y 0"/>
+
+</launch>

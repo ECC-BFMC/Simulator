@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- CROSSWALK SIGNS -->
+  <node
+		name  = "CWALK_K"
+	 	pkg   = "gazebo_ros"
+   		type  = "spawn_model"
+   		args  = "-file $(find models_pkg)/crosswalk_sign/model.sdf -sdf -model CWALK_K -x 7.863 -y 12.128 -z 0.078998 -R 0  -P 0  -Y 3.141592"/>
+
+  <node
+		name  = "CWALK_L"
+	 	pkg   = "gazebo_ros"
+   		type  = "spawn_model"
+   		args  = "-file $(find models_pkg)/crosswalk_sign/model.sdf -sdf -model CWALK_L -x 7.063 -y 11.266 -z 0.078998 -R 0  -P 0  -Y 0"/>
+
+  <node
+		name  = "CWALK_M"
+	 	pkg   = "gazebo_ros"
+   		type  = "spawn_model"
+   		args  = "-file $(find models_pkg)/crosswalk_sign/model.sdf -sdf -model CWALK_M -x 7.338 -y 13.965 -z 0.078998 -R 0  -P 0  -Y 3.141592"/>
+
+  <node
+		name  = "CWALK_N"
+	 	pkg   = "gazebo_ros"
+   		type  = "spawn_model"
+   		args  = "-file $(find models_pkg)/crosswalk_sign/model.sdf -sdf -model CWALK_N -x 6.538 -y 13.109 -z 0.078998 -R 0  -P 0  -Y 0"/>
+
+  <node
+		name  = "CWALK_O"
+	 	pkg   = "gazebo_ros"
+   		type  = "spawn_model"
+   		args  = "-file $(find models_pkg)/crosswalk_sign/model.sdf -sdf -model CWALK_O -x 1.560 -y 2.846 -z 0.078998 -R 0  -P 0  -Y 1.570796"/>
+
+  <node
+		name  = "CWALK_P"
+	 	pkg   = "gazebo_ros"
+   		type  = "spawn_model"
+   		args  = "-file $(find models_pkg)/crosswalk_sign/model.sdf -sdf -model CWALK_P -x 0.699 -y 3.64596 -z 0.078998 -R 0  -P 0  -Y 4.712388"/>
+
+</launch>

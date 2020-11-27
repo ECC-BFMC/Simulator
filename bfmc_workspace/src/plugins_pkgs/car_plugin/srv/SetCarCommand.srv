@@ -1,0 +1,6 @@
+#message fields
+Key key
+float32[] msg_val
+---
+#response fields
+string resp

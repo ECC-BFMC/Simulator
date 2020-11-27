@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- LEAVE HIGHWAY SIGNS -->
+  <node
+        name  = "LHIGH_U"
+        pkg   = "gazebo_ros"
+        type  = "spawn_model"
+        args  = "-file $(find models_pkg)/leave_highway_sign/model.sdf -sdf -model LHIGH_U -x 11.153 -y 9.613 -z 0.078998 -R 0  -P 0  -Y 4.712388"/>
+  
+  <node
+        name  = "LHIGH_Z"
+        pkg   = "gazebo_ros"
+        type  = "spawn_model"
+        args  = "-file $(find models_pkg)/leave_highway_sign/model.sdf -sdf -model LHIGH_Z -x 7.197 -y 2.695 -z 0.078998 -R 0  -P 0  -Y 0"/>
+
+</launch>

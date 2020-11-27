@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="track">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+	    <size>16.05000 16.23500</size>
+          </plane>
+        </geometry>
+        <surface>
+          <contact>
+             <collide_bitmask>0xffff</collide_bitmask>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      
+      <visual name="visual">
+        <cast_shadows>true</cast_shadows>
+        <transparency> 0 </transparency>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+	    <size>16.05000 16.23500</size>
+          </plane>
+        </geometry>
+        <material>
+            <ambient> 0 0 0 0 </ambient>
+            <diffuse> 100 100 100 1 </diffuse>
+            <script>
+              <uri>model://track/materials/scripts</uri>
+              <uri>model://track/materials/textures</uri>
+              <name>BFMC_MATERIAL</name>
+            </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

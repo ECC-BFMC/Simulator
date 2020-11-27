@@ -1,0 +1,16 @@
+material LEAVE_HIGHWAY_SIGN
+{
+  technique
+  {
+    pass
+    {
+      ambient 1.0 1.0 1.0 1.0
+      diffuse 1.0 1.0 1.0 1.0
+      
+      texture_unit
+			{
+				texture leave_highway_sign.png
+			}
+    }
+  }
+}

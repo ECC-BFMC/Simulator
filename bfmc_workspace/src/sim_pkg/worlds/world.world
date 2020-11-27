@@ -1,0 +1,75 @@
+<?xml version="1.0"?> 
+
+<sdf version="1.6">
+
+	<world name="bfmc_official">
+
+	  	<gravity> 0.0 0.0 -9.8</gravity>
+
+
+		<light type="point" name="c1">
+			<pose> 		0 0 2 0 0 0 	</pose>
+			<diffuse>	125 125 125 125	</diffuse>
+			<specular> 	125 125 125 125	</specular>
+			<attenuation>
+				<range> 	20 		</range>
+				<constant>   0.3 	</constant>
+				<quadratic>  0 		</quadratic>
+				<linear> 	 0 		</linear>
+			</attenuation>
+			<cast_shadows>false</cast_shadows>
+		</light>
+
+		<light type="point" name="c2">
+			<pose> 		15 15 2 0 0 0 	</pose>
+			<diffuse>	125 125 125 125	</diffuse>
+			<specular> 	125 125 125 125	</specular>
+			<attenuation>
+				<range> 	20 		</range>
+				<constant>   0.3 	</constant>
+				<quadratic>  0 		</quadratic>
+				<linear> 	 0 		</linear>
+			</attenuation>
+			<cast_shadows>false</cast_shadows>
+		</light>
+
+
+		<light type="point" name="c3">
+			<pose> 		15 0 2 0 0 0 	</pose>
+			<diffuse>	125 125 125 125	</diffuse>
+			<specular> 	125 125 125 125	</specular>
+			<attenuation>
+				<range> 	20 		</range>
+				<constant>   0.3 	</constant>
+				<quadratic>  0 		</quadratic>
+				<linear> 	 0 		</linear>
+			</attenuation>
+			<cast_shadows>false</cast_shadows>
+		</light>
+
+
+		<light type="point" name="c4">
+			<pose> 		0 15 2 0 0 0 	</pose>
+			<diffuse>	125 125 125 125	</diffuse>
+			<specular> 	125 125 125 125	</specular>
+			<attenuation>
+				<range> 	50 		</range>
+				<constant>   0.3 	</constant>
+				<quadratic>  0 		</quadratic>
+				<linear> 	 0 		</linear>
+			</attenuation>
+			<cast_shadows>false</cast_shadows>
+		</light>
+
+
+
+		<include>
+			<scale> 1 1 1 </scale>
+			<uri>model://track</uri>
+			<pose> 8.025 8.1175 </pose>
+	  	</include>
+
+	</world>
+
+</sdf>
+
