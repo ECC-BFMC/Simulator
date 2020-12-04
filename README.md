@@ -48,7 +48,7 @@ export ROS_PACKAGE_PATH="/home/{YOUR_USER}/Documents/bfmc_workspace/src:$ROS_PAC
 
 ```sh
 # Depending on your machine, it may take 1 to 3 minutes for the world to completely load.
-roslaunch sim_pgk map_with_all_objects.launch
+roslaunch sim_pkg map_with_all_objects.launch
 ```
 
 - The `[REST.cc:205] ERR` may appear. In order to sove it, see [this thread](https://answers.gazebosim.org/question/25030/gazebo-error-restcc205-error-in-rest-request/?answer=25048#post-id-25048).
