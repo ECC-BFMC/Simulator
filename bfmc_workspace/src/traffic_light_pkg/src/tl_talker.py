@@ -5,72 +5,148 @@
 #  * @file     tl_talker.py
 #  * @author   RBRO/PJ-IU
 #  * @version  V1.0
-#  * @date     21-08-2020 MMESTRE
+#  * @date     08-12-2020 drago
 #  * @brief    This file contains the traffic light operation for the start, tl1,tl2 and tl3
 #  *****************************************************************************************
 #
 
 import rospy
+
 from traffic_light_pkg.msg import traffic_light
 from itertools import cycle
-import time
+from enum import IntEnum
+
+# Mirror the traffic lights in a "+" intersection
+def mirrorLight(number):
+    """
+    For the intersection, two traffic lights will have the same lights on,
+    whereas the other two will have the opposite lights on
+    """
+
+    if number == 0:
+        return 2
+    
+    if number == 2:
+        return 0
+
+    return number
+
+# TrafficLightColor
+class Color(IntEnum):
+    RED     = 0
+    YELLOW  = 1
+    GREEN   = 2
+
+#Constants
+#Time for traffic light to change colors in seconds
+TL_interval = 1
+
 
 #Create a new publisher, specify the topic name, type of message and queue size
-pub = rospy.Publisher('traffic_light_topic', traffic_light, queue_size=10)
+pub = rospy.Publisher('traffic_light_topic', traffic_light, queue_size=2)
+
 #Initialize the node
 rospy.init_node('traffic_light_publisher_node', anonymous=True)
+
 #Initialization
 Traffic_light = traffic_light()
 
 #Function that publishes into the TL Topic the TL message (id and state)
 def sendState(id,state):
-    traffic_light.id = id
+    
+    traffic_light.id    = id
     traffic_light.state = state
+
     pub.publish(Traffic_light)
 
 
 def talker():
-    #Set loop rate for publication
-    rate = rospy.Rate(10) # 10z, every 0.1s as stated in bfmc docs
-    #Time for traffic light to change colors (1s)
-    TL_interval = 1
+    
+    # Set loop rate for publication
+    # 10z, every 0.1s as stated in bfmc docs
+    rate = rospy.Rate(10) 
 
-    #Numbers of the pattern repeat to simulate a longer duration, add a number means adding 1s of duration to the cycle
-    #: Patterns to be sent, main -> main traffic light, start -> traffic light in the start
-    pattern_main = [0,0,0,0,0,0,0,2,2,2,2,2,1,1]
-    pattern_start = [2,2,2,2,2,1,1,0,0,0,0,0,0,0]
-    #Mirror pattern that acts reverse to the main pattern of TL 1 and 2
-    pattern_mirrormain = [2,2,2,2,2,1,1,0,0,0,0,0,0,0]
+    """
+    For each entry in the patterns array, the traffic light cycle will last 1 second longer
 
-    #: Cycles of patterns
-    maincycle = cycle(pattern_main)
-    mirrormaincycle = cycle(pattern_mirrormain)
-    startcycle = cycle(pattern_start)
+    - if Color.RED    (or 0) is added, the red     traffic light color will last 1 second longer
+    - if Color.YELLOW (or 1) is added, the yellow  traffic light color will last 1 second longer
+    - if Color.GREEN  (or 2) is added, the green   traffic light color will last 1 second longer
+    
+    The length of the pattern list equals the traffic light cycle duration (in seconds)
+    """
 
+    # The middle intersection 
+    pattern_main = [
+        Color.RED,
+        Color.RED,
+        Color.RED,
+        Color.RED,
+        Color.RED,
+
+        Color.YELLOW,
+        Color.YELLOW,
+        
+        Color.GREEN,
+        Color.GREEN,
+        Color.GREEN,
+        Color.GREEN,
+        Color.GREEN,
+
+        Color.YELLOW,
+        Color.YELLOW
+    ]
+
+    pattern_start = [
+        Color.GREEN,
+        Color.GREEN,
+        Color.GREEN,
+        Color.GREEN,
+        Color.GREEN,
+
+        Color.YELLOW,
+        Color.YELLOW,
+
+        Color.RED,
+        Color.RED,
+        Color.RED,
+        Color.RED,
+        Color.RED,
+        
+        Color.YELLOW,
+        Color.YELLOW
+    ]
+    
+   
+    # Cycles of patterns
+    maincycle       = cycle(pattern_main)
+    startcycle      = cycle(pattern_start)
+    
     #Initializations
-    main_state = next(maincycle)
-    start_state = next(mirrormaincycle)
-    mirrormain_state = next(startcycle)
-
-    old_time = time.time()
+    main_state      = next(maincycle)
+    start_state     = next(startcycle)
+    last_time       = rospy.get_rostime().secs
 
     while not rospy.is_shutdown():
 
-        #: Change pattern element each second
-        if ((time.time()-old_time)>TL_interval):
-            main_state = next(maincycle)
-            start_state = next(mirrormaincycle)
-            mirrormain_state = next(startcycle)
-            old_time = time.time()
+        # Get time from ros
+        current_time = rospy.get_rostime().secs
 
-        #Send State for traffic light 1 and 2 with synched states
-        sendState(1,main_state)
-        sendState(2,main_state)
-        #Send State for traffic light 3 with the opposite state of 1 and 2
-        sendState(3,mirrormain_state)
+        # Change pattern element if the TL_interval(s) has passed 
+        if ((current_time - last_time) > TL_interval):
+            main_state  = next(maincycle)
+            start_state = next(startcycle)
+            last_time   = current_time
+
+        # Send State for the two opposite traffic lights
+        sendState(1, main_state)
+        sendState(2, main_state)
+
+        # Send State for traffic light with the opposite state of the previous ones
+        sendState(3, mirrorLight(main_state))
+
         #Send State for the start semaphore
-        sendState(0,start_state)
-
+        sendState(0, start_state)
 
         rate.sleep() #publish at 10hz
 

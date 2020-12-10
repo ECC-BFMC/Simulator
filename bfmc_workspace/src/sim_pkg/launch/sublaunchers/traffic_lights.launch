@@ -19,12 +19,12 @@
         name  = "TL2"
         pkg   = "gazebo_ros"
         type  = "spawn_model"
-        args  = "-file $(find models_pkg)/traffic_light/model.sdf -sdf -model TL2 -x 3.807 -y 3.896 -z 0 -R 0 -P 0 -Y 4.712388"/>
+        args  = "-file $(find models_pkg)/traffic_light/model.sdf -sdf -model TL2 -x 4.243041 -y 5.257532 -z 0 -R 0 -P 0 -Y 0"/>
   
   <node
         name  = "TL3"
         pkg   = "gazebo_ros"
         type  = "spawn_model"
-        args  = "-file $(find models_pkg)/traffic_light/model.sdf -sdf -model TL3 -x 4.243041 -y 5.257532 -z 0 -R 0 -P 0 -Y 0"/>
+        args  = "-file $(find models_pkg)/traffic_light/model.sdf -sdf -model TL3 -x 3.807 -y 3.896 -z 0 -R 0 -P 0 -Y 4.712388"/>
 
 </launch>

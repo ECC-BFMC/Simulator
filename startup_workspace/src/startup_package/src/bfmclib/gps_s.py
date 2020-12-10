@@ -15,33 +15,20 @@ class Gps:
         # Create subscriber node
         rospy.Subscriber(gps_topic_name, Twist, self.callback)
 
-        self._ox = None
-        self._oy = None
+        self._ox  = None
+        self._oy  = None
+        self._wz  = None
 
-        self.wz = None
-        self.pose = complex()
+        self._rot        = complex()
+        self._pose       = complex()
 
-    def getPose(self):
+        self.gps_data     = {'timestamp': None, 'coor': None}
+
+    def getGpsData(self):
         """
-
-        :return: complex number reprezenting the position of the car
+        This is the method that provides the data similar to the real gps from the BFMC
         """
-        return self.pose
-
-    def getWz(self):
-        """
-
-        :return: Oz rotation in radians
-        """
-        return self.wz
-
-    def getYaw(self):
-        """
-        Alias for getWz() function
-        :return:
-        """
-
-        return self.getWz()
+        return self.gps_data
 
     def callback(self, msg):
         """
@@ -49,8 +36,12 @@ class Gps:
         :param msg: geometry msg Twist. The rest of the unused values form Twist msg are 0
         :return:
         """
-        self.wz = round(msg.angular.z, 5)
+        self._wz = round(msg.angular.z, 5)
         self._ox = round(msg.linear.x, 5)
         self._oy = round(msg.linear.y, 5)
 
-        self.pose = complex(self._ox, self._oy)
+        self._pose = complex(self._ox, self._oy)
+        self._rot = complex(cmath.cos(self._wz), cmath.sin(self._wz))
+
+        self.gps_data = {'timestamp': (rospy.get_rostime().secs *1e9 + rospy.get_rostime().nsecs)/1e9 , 'coor': (self._pose, self._rot)}
+

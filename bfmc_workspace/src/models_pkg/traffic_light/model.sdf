@@ -30,7 +30,7 @@
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Black</name>
+            <name>PR2/Black</name>
           </script>
           <shader type='vertex'>
             <normal_map>__default__</normal_map>
@@ -127,7 +127,7 @@
 		 <attenuation>
 		   <range>5.00</range>
 		   <linear>0</linear>
-		   <constant>0.3</constant>
+		   <constant>0.08</constant>
 		   <quadratic>0</quadratic>
 		 </attenuation>
 		 <spot>
@@ -237,7 +237,7 @@
 		 <attenuation>
 		   <range>5.00</range>
 		   <linear>0</linear>
-		   <constant>0.3</constant>
+       <constant>0.08</constant>
 		   <quadratic>0</quadratic>
 		 </attenuation>
 		 <spot>
@@ -351,7 +351,7 @@
 		 <attenuation>
 		   <range>5.00</range>
 		   <linear>0</linear>
-		   <constant>0.3</constant>
+       <constant>0.08</constant>
 		   <quadratic>0</quadratic>
 		 </attenuation>
 		 <spot>

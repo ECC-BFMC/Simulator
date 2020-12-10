@@ -43,10 +43,15 @@ sleep(5)
 
 print("Select \"Frame preview\" window and press Q to exit")
 
+steering = 0.0
+speed = 0.0
+
 while 1:
 	cv2.imshow("Frame preview", cam.getImage())
 	
-	if cv2.waitKey(1) == ord('q'):
+	key = cv2.waitKey(1)
+	
+	if key == ord('q'):
 		cv2.destroyAllWindows()
 		break
 

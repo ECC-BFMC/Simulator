@@ -23,6 +23,10 @@ namespace gazebo
             // The gps message
             geometry_msgs::Twist                m_gps_pose;
 
+            // Timer for 1s delay
+            gazebo::common::Time                m_timestamp;          
+
+
         // Default constructor
         public: GPS();
         public: void Load(physics::ModelPtr, sdf::ElementPtr);

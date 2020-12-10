@@ -29,12 +29,14 @@
         <geometry>
           <plane>
             <normal>0 0 1</normal>
-	    <size>16.05000 16.23500</size>
+	          <size>16.05000 16.23500</size>
           </plane>
         </geometry>
         <material>
-            <ambient> 0 0 0 0 </ambient>
-            <diffuse> 100 100 100 1 </diffuse>
+          <ambient>1 1 1 1 </ambient>
+          <diffuse>1 1 1 1 </diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>1 1 1 1 </emissive>
             <script>
               <uri>model://track/materials/scripts</uri>
               <uri>model://track/materials/textures</uri>

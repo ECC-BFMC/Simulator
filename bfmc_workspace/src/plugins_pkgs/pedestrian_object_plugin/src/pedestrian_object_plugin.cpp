@@ -12,6 +12,8 @@
 
 #include "pedestrian_object_plugin.h"
 
+// This is the distance that triggers the pedestrian
+#define CAR_DIST_METER 0.5
 
 namespace gazebo
 {
@@ -211,12 +213,12 @@ namespace gazebo
             {
                 case States::wait_for_car:
                         
-                    if(hasReached(this->m_rc_car_position, this->m_near_point, 0.1))            // If the car is close to the NEAR LANE
+                    if(hasReached(this->m_rc_car_position, this->m_near_point, CAR_DIST_METER))            // If the car is close to the NEAR LANE
                     {  
                         this->m_speed = calculateVelocity(1);
                         this->m_state = States::car_on_the_first_lane;
                     }
-                    else if(hasReached(this->m_rc_car_position, this->m_far_point, 0.1))        // If the car is close to the FAR LANE
+                    else if(hasReached(this->m_rc_car_position, this->m_far_point, CAR_DIST_METER))        // If the car is close to the FAR LANE
                     {
                         this->m_speed = calculateVelocity(1);
                         this->m_state = States::car_on_the_second_lane;

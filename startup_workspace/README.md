@@ -30,10 +30,10 @@ This library converts the image from the Gazebo format into an OpenCV-compatible
 
 #### gps_s.py
 
-This library simulates the functionality of the real GPS. In order to use it, create a `Gps` object and call one of the following methods to get your position:
+This library simulates the functionality of the real GPS. In order to use it, create a `Gps` object and call the following method to get your position as a dictionary ( e.g`{'timestamp': secs_since_simulator_started, 'coor': (position, rotation)}`):
 
-- `getPose()`
-- `getWz()` or `getYaw()`
+- `getGpsData()`
+
 
 Similar to the real GPS, the value returned by `getPose()` is a complex number.
 

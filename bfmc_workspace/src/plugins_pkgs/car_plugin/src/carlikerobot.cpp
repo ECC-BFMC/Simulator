@@ -39,8 +39,10 @@ namespace gazebo{
         {
 
             // Convert from m/s in rads/sec
+            
             float  speed_rad_per_sec = speed_meter_per_sec / this->_wheelradius;
-
+            
+            
             float l_K = tan(steeringAngle_deg / 180.0 * PI)/this->_wheelbase;
 
             float l_Vr_R = speed_rad_per_sec*sqrt((pow(2.0-this->_axletrack*l_K,2.0)+pow(2.0*l_K*this->_wheelbase,2))/(4.0*(1.0+pow(_wheelbase*l_K,2.0))));
@@ -53,6 +55,16 @@ namespace gazebo{
 
             _model->GetJointController()->SetVelocityTarget(this->_jointLeft->GetScopedName(),l_Vr_L);
             _model->GetJointController()->SetVelocityTarget(this->_jointRight->GetScopedName(),l_Vr_R);
+            
+            /*
+            if(DEBUG)
+            {
+                ROS_INFO("Front speed:\t\t[%f, %f]", speed_rad_per_sec, speed_rad_per_sec);
+            }
+
+            _model->GetJointController()->SetVelocityTarget(this->_jointLeft->GetScopedName(),speed_rad_per_sec);
+            _model->GetJointController()->SetVelocityTarget(this->_jointRight->GetScopedName(),speed_rad_per_sec);
+            */
         }
 
 
@@ -120,6 +132,7 @@ namespace gazebo{
 
         void CSteerWheelsAngle::update(float f_steerAngle_deg)
         {
+            
             float l_K = tan(f_steerAngle_deg / 180.0 * PI) / this->_wheelbase;
             float l_steer_right = -1.0 * atan(_wheelbase * 2.0 * l_K / (2.0 - this->_axletrack * l_K));
             float l_steer_left = -1.0 * atan(_wheelbase * 2.0 * l_K / (2.0 + this->_axletrack * l_K));
@@ -129,9 +142,25 @@ namespace gazebo{
                 ROS_INFO("Angle:\t\t\t[%f, %f]", l_steer_left*180.0/PI,l_steer_right*180.0/PI);
                 ROS_INFO_STREAM("====================================================================");
             }
+            
 
             _model->GetJointController()->SetPositionTarget(this->_jointLeft->GetScopedName(), l_steer_left);
-            _model->GetJointController()->SetPositionTarget(this->_jointRight->GetScopedName(), l_steer_right);   
+            _model->GetJointController()->SetPositionTarget(this->_jointRight->GetScopedName(), l_steer_right); 
+                
+            /* simple 
+            const double deg2rad = 0.017453292;
+            float radians = f_steerAngle_deg * deg2rad;
+
+            if(DEBUG)
+            {
+                ROS_INFO("Angle:\t\t\t[%f, %f]", f_steerAngle_deg, f_steerAngle_deg);
+                ROS_INFO("RAD:\t\t\t[%f, %f]", radians, radians);
+
+                ROS_INFO_STREAM("====================================================================");
+            }
+            _model->GetJointController()->SetPositionTarget(this->_jointLeft->GetScopedName(), -1 * radians);
+            _model->GetJointController()->SetPositionTarget(this->_jointRight->GetScopedName(), -1 * radians);
+            */
         }
     }; // namespace carlikerobot
 } // namespace gazebo

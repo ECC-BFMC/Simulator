@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='rcCar'>
+  <model name='rcCar_assembly_obstacle'>
     <include>
       <uri>model://chassis</uri>
       <pose>0 0 0 0 0 0</pose>
@@ -42,14 +42,6 @@
       <name>wheel_front_right</name>
     </include>
     
-    <!-- including the camera link -->
-    <!-- 0.261799388 -->
-    <include>
-      <uri>model://camera</uri>
-      <pose>0 0 0.2 0 0.2617 0</pose>
-      <name>camera</name>
-    </include>
-
     <!-- includeing the car body -->
     <include>
       <uri>model://car_body</uri>
@@ -284,27 +276,6 @@
       </physics>
     </joint>
 
-
-    <!-- fixed joint for the camera -->
-    <joint name='joint_camera' type='fixed'>
-      <parent>chassis::link</parent>
-      <child>camera::link_camera</child>
-      <pose frame=''>0 0 0 0 -0 0</pose>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
-    </joint>
-
-
     <!-- Plugin  -->
     <plugin name='CarLikeRobotPlugin' filename='libcar_plugin.so'>
       <wheelbase>0.26</wheelbase>
@@ -334,10 +305,5 @@
       <initial_speed>0.0</initial_speed>
       <robotNamespace>/</robotNamespace>
     </plugin>
-
-    <plugin name='bno055' filename='libbno055_plugin.so'> </plugin>
-    <plugin name='gps' filename='libgps_plugin.so'> </plugin>
-
-
   </model>
 </sdf>

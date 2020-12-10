@@ -14,7 +14,7 @@
 #include "gps_plugin.hpp"
 #include <ignition/math/Vector3.hh>
 
-#define DEBUG true
+#define DEBUG false
 
 namespace gazebo
 {
@@ -48,6 +48,7 @@ namespace gazebo
           this->m_gps_pose.angular.x  = 0;
           this->m_gps_pose.angular.y  = 0;
 
+          this->m_timestamp = this->m_model->GetWorld()->SimTime();
           if(DEBUG)
           {
               std::cerr << "\n\n";
@@ -67,7 +68,13 @@ namespace gazebo
            	this->m_gps_pose.linear.y   = this->m_model->RelativePose().Pos().Y();
            	this->m_gps_pose.angular.z  = this->m_model->RelativePose().Rot().Yaw();
            	
-            this->m_pubGPS.publish(this->m_gps_pose);
+
+            if((this->m_model->GetWorld()->SimTime() - this->m_timestamp).Float() > 1)
+            {    
+              this->m_pubGPS.publish(this->m_gps_pose);
+              this->m_timestamp = this->m_model->GetWorld()->SimTime();
+            }
+
         };      
     }; //namespace trafficLight
     GZ_REGISTER_MODEL_PLUGIN(gps::GPS)

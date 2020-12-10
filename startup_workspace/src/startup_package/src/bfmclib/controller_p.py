@@ -6,10 +6,6 @@ from car_plugin.msg import Response
 
 from time import sleep
 
-MAX_STEER_ANGLE = 25
-MAX_SPEED = 5
-
-
 class Controller:
     def __init__(self, command_topic_name="/rcCar/Command", response_topic_name="/rcCar/Response"):
         """
@@ -17,7 +13,7 @@ class Controller:
         :param command_topic_name: drive and stop commands are sent on this topic
         :param response_topic_name: "ack" message is received on this topic
         """
-        self.pub = rospy.Publisher(command_topic_name, Command, queue_size=10)
+        self.pub = rospy.Publisher(command_topic_name, Command, queue_size=2)
 
         # Wait for publisher to register to roscore -
         # TODO: This is a temporary fix. Problem with timing
@@ -45,8 +41,8 @@ class Controller:
         self.msg_command.key.v = 1
 
         # Normalize both speed and angle
-        speed = Controller.normalize(speed, -1 * abs(MAX_SPEED), abs(MAX_SPEED))
-        angle = Controller.normalize(angle, -1 * abs(MAX_STEER_ANGLE), abs(MAX_STEER_ANGLE))
+        speed = Controller.normalizeSpeed(speed)
+        angle = Controller.normalizeSteer(angle)
 
         self.msg_command.msg_val = [speed, angle]
 
@@ -64,7 +60,7 @@ class Controller:
         self.msg_command.key.v = 2
 
         # Normalize angle
-        angle = Controller.normalize(angle, -1 * abs(MAX_STEER_ANGLE), abs(MAX_STEER_ANGLE))
+        angle = Controller.normalizeSteer(angle)
 
         # Set message
         self.msg_command.msg_val = [angle]
@@ -78,22 +74,32 @@ class Controller:
             self.received = True
 
     @staticmethod
-    def normalize(val, min, max):
+    def normalizeSpeed(val):
         """
-
-        :param val: the value you don't want to exceed [min, max]
-        :param min:
-        :param max:
         :return: normalized value
         """
-        if max < min:
-            tmp = max
-            max = min
-            min = tmp
 
-        if val < min:
-            val = min
-        elif val > max:
-            val = max
+        if val < -1:
+            val = -1
+        
+        elif val > 1:
+            val = 1
 
         return val
+
+    @staticmethod
+    def normalizeSteer(val):
+        """
+        :return: normalized value
+        """
+        if val < -25:
+            val = -25
+
+        elif val > 25:
+            val = 25
+
+        return Controller.map_f(val, -25, 25, -35, 35)
+
+    @staticmethod
+    def map_f(x, a, b, c, d):
+        return (x - a) * (d - c) / (b - a) + c
