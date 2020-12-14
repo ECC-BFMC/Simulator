@@ -58,7 +58,7 @@ class TrafficLight:
         """
 
         if as_string:
-            return _getStrState(self.TL0_state)
+            return self._getStrState(self.TL0_state)
 
         return self.TL0_state
 
@@ -70,7 +70,7 @@ class TrafficLight:
         """
 
         if as_string:
-            return _getStrState(self.TL1_state)
+            return self._getStrState(self.TL1_state)
 
         return self.TL1_state
 
@@ -82,7 +82,7 @@ class TrafficLight:
         """
 
         if as_string:
-            return _getStrState(self.TL2_state)
+            return self._getStrState(self.TL2_state)
 
         return self.TL2_state
 
