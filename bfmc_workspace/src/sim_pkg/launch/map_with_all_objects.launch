@@ -28,5 +28,7 @@
   <node name = "delay_10" pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "11 sim_pkg traffic_lights.launch"        	  />
   <node name = "delay_12" pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "13 sim_pkg traffic_lights_controller.launch" />
   <node name = "delay_13" pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "13 sim_pkg obstacle_car.launch"              />
+  <node name = "delay_14" pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "13 sim_pkg members.launch"                   />
+  <node name = "delay_15" pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "13 sim_pkg ramp.launch"                      />
 
 </launch>
