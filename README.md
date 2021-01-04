@@ -90,3 +90,5 @@ rosrun startup_package main.py
 - New car model obstacle (the same as rcCar but without camera) added along with the corresponding `.launch` file;
 - GPS is sending the position every 1 second, and the `Gps` class from the `gps_s.py` script provide the data similar to the real gps (a dictionary containing the timestamp and the data as a touple);
 - Normalise the speed `[-1,1]` and steering values `[-25, 25]`;
+- Inserted bystanders 
+- Inserted ramp
