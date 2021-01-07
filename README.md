@@ -19,11 +19,11 @@ There are **two workspaces**:
      
 ### Workspace Setup
 
-Both workspaces should be stored inside the `Documents` folder.
+Clone the repository inside the `Documents` folder (or perform a commit on the repository)
 
 #### 1. bfmc_workspace
 
-- Open a terminal in `bfmc_workspace` directory and run the following command:
+- Open a terminal in `~/Documents/BFMC_Simulator/bfmc_workspace` directory and run the following command:
 
 ```sh
 catkin_make
@@ -42,13 +42,9 @@ source devel/setup.bash
 ```sh
 # You can either run these commands each time you want to use the workspace, or add them to the end of the `~/.bashrc` file and source it.
 # Don't forget to replace {YOUR_USER} with your actually user name
-export GAZEBO_MODEL_PATH="/home/{YOUR_USER}/Documents/bfmc_workspace/src/models_pkg:$GAZEBO_MODEL_PATH"
-export ROS_PACKAGE_PATH="/home/{YOUR_USER}/Documents/bfmc_workspace/src:$ROS_PACKAGE_PATH"
+export GAZEBO_MODEL_PATH="/home/{YOUR_USER}/Documents/BFMC_Simulator/bfmc_workspace/src/models_pkg:$GAZEBO_MODEL_PATH"
+export ROS_PACKAGE_PATH="/home/{YOUR_USER}/Documents/BFMC_Simulator/bfmc_workspace/src:$ROS_PACKAGE_PATH"
 ```
-
-- From `..bfmc_workspace/src/traffic_light_pkg/src` directory, set both `tl_talker.py` and `tl_listener.py` files' permissions to executable running the `chmod` command `$ chmod +x myscript.py` in terminal.
-
-- From `..bfmc_workspace/src/sim_pkg/launch/bash_scripts` directory set `delay.sh` file's permissions to executable using `chmod` command `$ chmod +x delay` in terminal.
 
 - Finally, try running the following command:
 
@@ -63,15 +59,13 @@ roslaunch sim_pkg map_with_all_objects.launch
 
 #### 2. startup_workspace
 
-- Open a terminal, navigate to the `startup_workspace` directory and run the following commands:
+- Open a terminal, navigate to the `~/Documents/BFMC_Simulator/startup_workspace` directory and run the following commands:
 
 ```sh
 source ~/Documents/bfmc_workspace/devel/setup.bash 
 catkin_make
 source devel/setup.bash
 ```
-
-- From `..startup_workspace/src/startup_package/src` directory, set `main.py`file's permissions to executable using `chmod` command `$ chmod +x main.py` in terminal.
 
 - With the simulator started, run the following command:
 
@@ -82,13 +76,7 @@ rosrun startup_package main.py
 ---
 
 # Release notes
-- Usless Cmake files removed;
-- Car texture added;
-- Traffic lights are synchronized to Gazebo simulation time (until now, they were synchronized with the real time);
-- The semaphores lights were increased in intensity;
-- Car's steering parameters modified for better steering performances;
-- New car model obstacle (the same as rcCar but without camera) added along with the corresponding `.launch` file;
-- GPS is sending the position every 1 second, and the `Gps` class from the `gps_s.py` script provide the data similar to the real gps (a dictionary containing the timestamp and the data as a touple);
-- Normalise the speed `[-1,1]` and steering values `[-25, 25]`;
-- Inserted bystanders 
-- Inserted ramp
+- Environmental elements added (people around the map)
+- Ramp added;
+- Made files executable. (BFMC_Simulator/startup_workspace/src/startup_package/src/main.py; BFMC_Simulator/bfmc_workspace/src/sim_pck/launch/bash_script/delay.sh; BFMC_Simulator/bfmc_workspace/src/traffic_light_pkg/src/tl_talker.py; BFMC_Simulator/bfmc_workspace/src/traffic_light_pkg/src/tl_listener.py)
+- Fixed details in guide.
