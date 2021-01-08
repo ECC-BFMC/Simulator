@@ -1,8 +1,0 @@
-prefix=/home/rares/Documents/BFMC_Simulator/bfmc_workspace/devel
-
-Name: traffic_light_plugin
-Description: Description of traffic_light_plugin
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: roscpp gazebo_ros traffic_light_pkg

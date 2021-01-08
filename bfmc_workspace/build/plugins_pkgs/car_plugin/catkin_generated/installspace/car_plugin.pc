@@ -1,8 +1,0 @@
-prefix=/home/rares/Documents/BFMC_Simulator/bfmc_workspace/install
-
-Name: car_plugin
-Description: Description of car_plugin
-Version: 1.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: roscpp gazebo_ros message_runtime std_msgs
