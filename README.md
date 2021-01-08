@@ -80,3 +80,4 @@ rosrun startup_package main.py
 - Ramp added;
 - Made files executable. (BFMC_Simulator/startup_workspace/src/startup_package/src/main.py; BFMC_Simulator/bfmc_workspace/src/sim_pck/launch/bash_script/delay.sh; BFMC_Simulator/bfmc_workspace/src/traffic_light_pkg/src/tl_talker.py; BFMC_Simulator/bfmc_workspace/src/traffic_light_pkg/src/tl_listener.py)
 - Fixed details in guide.
+- Added highwy separators launchers.
