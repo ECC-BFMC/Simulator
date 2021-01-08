@@ -1,0 +1,2 @@
+models_pkg:plugins_pkgs/bno055_plugin:plugins_pkgs/car_plugin:plugins_pkgs/gps_plugin:plugins_pkgs/pedestrian_object_plugin:plugins_pkgs/traffic_light_plugin:sim_pkg:traffic_light_pkg
+-DCATKIN_DEVEL_PREFIX=/home/rares/Documents/BFMC_Simulator/bfmc_workspace/devel -DCMAKE_INSTALL_PREFIX=/home/rares/Documents/BFMC_Simulator/bfmc_workspace/install -G Unix Makefiles
