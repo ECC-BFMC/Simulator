@@ -122,7 +122,7 @@
         <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
           <alwaysOn>true</alwaysOn>
           <updateRate>0.0</updateRate>
-          <cameraName>RCcar/camera1</cameraName>
+          <cameraName>/rcCar/camera1</cameraName>
           <imageTopicName>image_raw</imageTopicName>
           <cameraInfoTopicName>camera_info</cameraInfoTopicName>
           <frameName>link_camera</frameName>
@@ -132,7 +132,7 @@
           <distortionK3>0.0</distortionK3>
           <distortionT1>0.0</distortionT1>
           <distortionT2>0.0</distortionT2>
-	  <robotNamespace>/</robotNamespace>
+	  <robotNamespace></robotNamespace>
         </plugin>
 
       </sensor>

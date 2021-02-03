@@ -1,0 +1,9 @@
+bfmc_workspace/devel/
+bfmc_workspace/build/
+bfmc_workspace/.catkin_workspace
+bfmc_workspace/src/CMakeLists.txt
+startup_workspace/devel/
+startup_workspace/build/
+startup_workspace/.catkin_workspace
+startup_workspace/src/CMakeLists.txt
+*.pyc

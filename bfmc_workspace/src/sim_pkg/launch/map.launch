@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+  <launch>
+  	
+    <arg name="gui"     value="true"/>
+    <arg name="pause"   value="true"/>
+    <arg name="verbose" value="false"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name"   value="$(find sim_pkg)/worlds/world.world"/>
+    <arg name="paused"       value="false"/>    
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug"        value="true"/>
+    <arg name="gui"          value="true"/>
+  </include>
+  </launch>

@@ -102,23 +102,6 @@
     </link>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <link name='green_lens'>
 	  <light name="green_lens_light" type='spot'>
          <pose frame="green_lens">4 0.001819 1.00 0 1.325891 0</pose>

@@ -57,6 +57,15 @@ namespace gazebo
             }
         }
 
+	CMessageHandler::~CMessageHandler()
+	{
+		if (this->_rosNode != nullptr)
+		{
+			this->_rosNode -> shutdown();
+		}
+		 this->_subscribeRosQueueThread.join();
+	}
+
         // Callback function for receiving messages on the /car_name/Command topic
         void CMessageHandler::OnMsgCommand(car_plugin::CommandConstPtr _msg)
         {            

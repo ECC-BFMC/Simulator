@@ -50,26 +50,10 @@
     </include>
 
     <!-- LIST OF JOINTS -->
-    <joint name='joint_leftrear_rim' type='revolute'>
+    <joint name='joint_leftrear_rim' type='fixed'>
       <parent>chassis::link</parent>
       <child>wheel_rear_left::link_rim</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
-      <axis>
-        <xyz>0 0 -1</xyz>
-        <use_parent_model_frame>0</use_parent_model_frame>
-        <limit>
-          <lower>-1.79769e+308</lower>
-          <upper>1.79769e+308</upper>
-          <effort>-1</effort>
-          <velocity>-1</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0</damping>
-          <friction>0</friction>
-        </dynamics>
-      </axis>
       <physics>
         <ode>
           <limit>
@@ -84,95 +68,10 @@
       </physics>
     </joint>
 
-    <joint name='joint_rightrear_rim' type='revolute'>
+    <joint name='joint_rightrear_rim' type='fixed'>
       <parent>chassis::link</parent>
       <child>wheel_rear_right::link_rim</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
-      <axis>
-        <xyz>0 0 -1</xyz>
-        <use_parent_model_frame>0</use_parent_model_frame>
-        <limit>
-          <lower>-1.79769e+308</lower>
-          <upper>1.79769e+308</upper>
-          <effort>-1</effort>
-          <velocity>-1</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0</damping>
-          <friction>0</friction>
-        </dynamics>
-      </axis>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
-    </joint>
-    
-    <!-- Front right joint between the chassis and the steering comp. -->
-    <joint name='joint_leftfront_steer' type='revolute'>
-      <parent>chassis::link</parent>
-      <child>steer_left::link_steer</child>
-      <pose frame=''>0 0 0.005 0 -0 0</pose>
-      <axis>
-        <xyz>0 1 0</xyz>
-        <use_parent_model_frame>0</use_parent_model_frame>
-        <limit>
-          <lower>-1.79769e+308</lower>
-          <upper>1.79769e+308</upper>
-          <effort>-1</effort>
-          <velocity>-1</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0</damping>
-          <friction>0</friction>
-        </dynamics>
-      </axis>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
-    </joint>
-    <!-- Front left joint between the chassis and the steering comp. -->
-    <joint name='joint_rightfront_steer' type='revolute'>
-      <parent>chassis::link</parent>
-      <child>steer_right::link_steer</child>
-      <pose frame=''>0 0 -0.005 0 -0 0</pose>
-      <axis>
-        <xyz>0 1 0</xyz>
-        <use_parent_model_frame>0</use_parent_model_frame>
-        <limit>
-          <lower>-1.79769e+308</lower>
-          <upper>1.79769e+308</upper>
-          <effort>-1</effort>
-          <velocity>-1</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0</damping>
-          <friction>0</friction>
-        </dynamics>
-      </axis>
       <physics>
         <ode>
           <limit>
@@ -188,26 +87,10 @@
     </joint>
 
     <!-- Right joint between the steering and the rim   -->
-    <joint name='joint_rightfront_rim' type='revolute'>
-      <parent>steer_right::link_steer</parent>
+    <joint name='joint_rightfront_rim' type='fixed'>
+      <parent>chassis::link</parent>
       <child>wheel_front_right::link_rim</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
-      <axis>
-        <xyz>0 0 -1</xyz>
-        <use_parent_model_frame>0</use_parent_model_frame>
-        <limit>
-          <lower>-1.79769e+308</lower>
-          <upper>1.79769e+308</upper>
-          <effort>-1</effort>
-          <velocity>-1</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0</damping>
-          <friction>0</friction>
-        </dynamics>
-      </axis>
       <physics>
         <ode>
           <limit>
@@ -223,26 +106,10 @@
     </joint>
 
     <!-- Left joint between the steering and the rim   -->
-    <joint name='joint_leftfront_rim' type='revolute'>
-      <parent>steer_left::link_steer</parent>
+    <joint name='joint_leftfront_rim' type='fixed'>
+      <parent>chassis::link</parent>
       <child>wheel_front_left::link_rim</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
-      <axis>
-        <xyz>0 0 -1</xyz>
-        <use_parent_model_frame>0</use_parent_model_frame>
-        <limit>
-          <lower>-1.79769e+308</lower>
-          <upper>1.79769e+308</upper>
-          <effort>-1</effort>
-          <velocity>-1</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0</damping>
-          <friction>0</friction>
-        </dynamics>
-      </axis>
       <physics>
         <ode>
           <limit>
@@ -275,35 +142,5 @@
         </ode>
       </physics>
     </joint>
-
-    <!-- Plugin  -->
-    <plugin name='CarLikeRobotPlugin' filename='libcar_plugin.so'>
-      <wheelbase>0.26</wheelbase>
-      <axletrack>0.162</axletrack>
-      <wheelradius>0.0325</wheelradius>
-      <speed_wheel_joints> 
-        <front_wheel_joints>
-          <leftjoint>joint_leftfront_rim</leftjoint>
-          <rightjoint>joint_rightfront_rim</rightjoint>
-        </front_wheel_joints>
-        <rear_wheel_joints>
-          <leftjoint>joint_leftrear_rim</leftjoint>
-          <rightjoint>joint_rightrear_rim</rightjoint>
-        </rear_wheel_joints>
-        <kp>0.01</kp>
-        <ki>0.0</ki>
-        <kd>0.0</kd>
-      </speed_wheel_joints>
-      <steer_wheel_joints>
-        <leftjoint>joint_leftfront_steer</leftjoint>
-        <rightjoint>joint_rightfront_steer</rightjoint>
-        <kp>10</kp>
-        <ki>0.0</ki>
-        <kd>0.1</kd>
-      </steer_wheel_joints>
-      <initial_steer>0.0</initial_steer>
-      <initial_speed>0.0</initial_speed>
-      <robotNamespace>/</robotNamespace>
-    </plugin>
   </model>
 </sdf>

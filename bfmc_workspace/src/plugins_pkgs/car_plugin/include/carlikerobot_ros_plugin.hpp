@@ -44,7 +44,7 @@ namespace gazebo
         {
             public:
                 CMessageHandler(std::string, IRobotCommandSetter*);
-                
+                ~CMessageHandler();
                 void OnMsgCommand(car_plugin::CommandConstPtr _msg);
 
             private:

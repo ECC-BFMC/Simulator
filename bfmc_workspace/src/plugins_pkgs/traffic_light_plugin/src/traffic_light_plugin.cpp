@@ -20,7 +20,16 @@ namespace gazebo
     namespace trafficLight
     {   
         TrafficLight::TrafficLight():ModelPlugin() {}
-
+	TrafficLight::~TrafficLight()
+	{
+		if (this->m_ros_node != nullptr)
+		{
+			this->m_ros_node -> shutdown();
+		}
+		ROS_INFO_STREAM("ENDING");
+		this->m_ros_queue_thread.join();
+		ROS_INFO_STREAM("The end");
+	}
      
         void TrafficLight::Load(physics::ModelPtr model_ptr, sdf::ElementPtr sdf_ptr)
         {        	
@@ -127,6 +136,7 @@ namespace gazebo
 		  {
 		    this->m_ros_queue.callAvailable(ros::WallDuration(timeout));
 		  }
+		ROS_INFO_STREAM("ENDEEED THREAD");
 		}     
     }; //namespace trafficLight
     GZ_REGISTER_MODEL_PLUGIN(trafficLight::TrafficLight)

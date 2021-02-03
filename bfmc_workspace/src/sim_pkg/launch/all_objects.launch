@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- LAUNCH ALL OBJECTS (you need first to have running the empty map) -->
+<launch>
+  <include file = "$(find sim_pkg)/launch/sublaunchers/car.launch"                  />
+  <include file = "$(find sim_pkg)/launch/sublaunchers/enter_highway_signs.launch"  />
+  <include file = "$(find sim_pkg)/launch/sublaunchers/leave_highway_signs.launch"  />
+  <include file = "$(find sim_pkg)/launch/sublaunchers/prohibited_signs.launch"     />
+  <include file = "$(find sim_pkg)/launch/sublaunchers/oneway_signs.launch"         />
+  <include file = "$(find sim_pkg)/launch/sublaunchers/parking_signs.launch"        />
+  <include file = "$(find sim_pkg)/launch/sublaunchers/crosswalk_signs.launch"      />
+  <include file = "$(find sim_pkg)/launch/sublaunchers/pedestrian_objects.launch"   />
+  <include file = "$(find sim_pkg)/launch/sublaunchers/priority_signs.launch"       />
+  <include file = "$(find sim_pkg)/launch/sublaunchers/roundabout_signs.launch"     />
+  <include file = "$(find sim_pkg)/launch/sublaunchers/stop_signs.launch"           />
+  <include file = "$(find sim_pkg)/launch/sublaunchers/members.launch"              />
+  <include file = "$(find sim_pkg)/launch/sublaunchers/ramp.launch"                 />
+  <include file = "$(find sim_pkg)/launch/sublaunchers/traffic_lights.launch"       />
+</launch>

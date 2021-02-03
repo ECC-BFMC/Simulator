@@ -21,7 +21,7 @@ namespace gazebo
     namespace gps
     {   
         GPS::GPS():ModelPlugin() {}
-     
+     		
         void GPS::Load(physics::ModelPtr model_ptr, sdf::ElementPtr sdf_ptr)
         {
           this->m_updateConnection = event::Events::ConnectWorldUpdateBegin(std::bind(&GPS::OnUpdate, this));
@@ -65,7 +65,7 @@ namespace gazebo
         {        
 
            	this->m_gps_pose.linear.x   = this->m_model->RelativePose().Pos().X();
-           	this->m_gps_pose.linear.y   = this->m_model->RelativePose().Pos().Y();
+           	this->m_gps_pose.linear.y   = abs(this->m_model->RelativePose().Pos().Y());
            	this->m_gps_pose.angular.z  = this->m_model->RelativePose().Rot().Yaw();
            	
 

@@ -10,6 +10,8 @@ namespace gazebo
 
         class TrafficLight: public ModelPlugin
     	{
+	public: 
+		~TrafficLight();
         private: 
             physics::ModelPtr                   m_model;
             sdf::ElementPtr                     m_sdf;

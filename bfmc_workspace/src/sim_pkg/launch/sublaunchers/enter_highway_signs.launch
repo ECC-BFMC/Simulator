@@ -7,12 +7,12 @@
         name  = "EHIGH_T"
         pkg   = "gazebo_ros"
         type  = "spawn_model"
-        args  = "-file $(find models_pkg)/enter_highway_sign/model.sdf -sdf -model EHIGH_T -x 6.402 -y 1.463 -z 0.078998 -R 0  -P 0  -Y 3.141592"/>
+        args  = "-file $(find models_pkg)/enter_highway_sign/model.sdf -sdf -model EHIGH_T -x 5.871 -y -13.970 -z 0.078998 -R 0  -P 0  -Y 3.141592"/>
 
   <node
         name  = "EHIGH_Y"
         pkg   = "gazebo_ros"
         type  = "spawn_model"
-        args  = "-file $(find models_pkg)/enter_highway_sign/model.sdf -sdf -model EHIGH_Y -x 9.920 -y 10.535 -z 0.078998 -R 0  -P 0  -Y 1.570796"/>
+        args  = "-file $(find models_pkg)/enter_highway_sign/model.sdf -sdf -model EHIGH_Y -x 9.412 -y -4.850 -z 0.078998 -R 0  -P 0  -Y 1.570796"/>
 
 </launch>

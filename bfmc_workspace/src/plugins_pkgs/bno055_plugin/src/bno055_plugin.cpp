@@ -15,7 +15,7 @@
 #include <ignition/math/Vector3.hh>
 
 
-#define DEBUG true
+#define DEBUG false
 
 namespace gazebo
 {

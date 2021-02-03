@@ -7,18 +7,18 @@
         name  = "GIR_Q"
         pkg   = "gazebo_ros"
         type  = "spawn_model"
-        args  = "-file $(find models_pkg)/roundabout_sign/model.sdf -sdf -model GIR_Q -x 9.152 -y 11.266 -z 0.078998 -R 0  -P 0  -Y 0"/>
+        args  = "-file $(find models_pkg)/roundabout_sign/model.sdf -sdf -model GIR_Q -x 8.766 -y -4.179 -z 0.078998 -R 0  -P 0  -Y 0"/>
 
   <node
         name  = "GIR_R"
         pkg   = "gazebo_ros"
         type  = "spawn_model"
-        args  = "-file $(find models_pkg)/roundabout_sign/model.sdf -sdf -model GIR_R -x 10.782 -y 10.496 -z 0.078998 -R 0  -P 0  -Y 1.570796"/>
+        args  = "-file $(find models_pkg)/roundabout_sign/model.sdf -sdf -model GIR_R -x 10.320 -y -4.869 -z 0.078998 -R 0  -P 0  -Y 1.570796"/>
   
   <node
         name  = "GIR_S"
         pkg   = "gazebo_ros"
         type  = "spawn_model"
-        args  = "-file $(find models_pkg)/roundabout_sign/model.sdf -sdf -model GIR_S -x 11.550 -y 12.128 -z 0.078998 -R 0  -P 0  -Y 3.141592"/>
+        args  = "-file $(find models_pkg)/roundabout_sign/model.sdf -sdf -model GIR_S -x 11.015 -y -3.297 -z 0.078998 -R 0  -P 0  -Y 3.141592"/>
   
 </launch>
