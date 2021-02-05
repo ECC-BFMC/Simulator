@@ -18,7 +18,7 @@ class CameraHandler():
         """
         self.bridge = CvBridge()
         self.cv_image = np.zeros((640, 480))
-        self.image_sub = rospy.Subscriber("/rcCar/camera1/image_raw", Image, self.callback)
+        self.image_sub = rospy.Subscriber("/rcCar/rcCar/camera1/image_raw", Image, self.callback)
 
     def callback(self, data):
         """
