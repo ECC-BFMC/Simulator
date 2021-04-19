@@ -1,6 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
   <model name='rcCar_assembly_obstacle'>
+      <static>true</static>
     <include>
       <uri>model://chassis</uri>
       <pose>0 0 0 0 0 0</pose>
@@ -54,36 +55,14 @@
       <parent>chassis::link</parent>
       <child>wheel_rear_left::link_rim</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
+
     </joint>
 
     <joint name='joint_rightrear_rim' type='fixed'>
       <parent>chassis::link</parent>
       <child>wheel_rear_right::link_rim</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
+
     </joint>
 
     <!-- Right joint between the steering and the rim   -->
@@ -91,18 +70,7 @@
       <parent>chassis::link</parent>
       <child>wheel_front_right::link_rim</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
+
     </joint>
 
     <!-- Left joint between the steering and the rim   -->
@@ -110,18 +78,7 @@
       <parent>chassis::link</parent>
       <child>wheel_front_left::link_rim</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
+
     </joint>
 
     <!-- fixed joint for the car body -->
@@ -129,18 +86,7 @@
       <parent>chassis::link</parent>
       <child>car_body::link</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
-      <physics>
-        <ode>
-          <limit>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </limit>
-          <suspension>
-            <cfm>0</cfm>
-            <erp>0.2</erp>
-          </suspension>
-        </ode>
-      </physics>
+
     </joint>
   </model>
 </sdf>

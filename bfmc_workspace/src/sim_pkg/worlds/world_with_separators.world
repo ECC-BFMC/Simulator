@@ -1,10 +1,12 @@
+<?xml version="1.0"?> 
+
 <sdf version='1.6'>
   <world name='bfmc_official'>
     <gravity>0 0 -9.8</gravity>
     <light name='c1' type='point'>
       <pose frame=''>0 0 2 0 -0 0</pose>
       <diffuse>125 125 125 125</diffuse>
-      <specular>125 125 125 125</specular>
+      <specular>50 50 50 50</specular>
       <attenuation>
         <range>20</range>
         <constant>0.3</constant>
@@ -17,7 +19,7 @@
     <light name='c2' type='point'>
       <pose frame=''>15 0 2 0 -0 0</pose>
       <diffuse>125 125 125 125</diffuse>
-      <specular>125 125 125 125</specular>
+      <specular>50 50 50 50</specular>
       <attenuation>
         <range>20</range>
         <constant>0.3</constant>
@@ -30,7 +32,7 @@
     <light name='c3' type='point'>
       <pose frame=''>0 -15 2 0 -0 0</pose>
       <diffuse>125 125 125 125</diffuse>
-      <specular>125 125 125 125</specular>
+      <specular>50 50 50 50</specular>
       <attenuation>
         <range>20</range>
         <constant>0.3</constant>
@@ -43,7 +45,7 @@
     <light name='c4' type='point'>
       <pose frame=''>15 -15 2 0 -0 0</pose>
       <diffuse>125 125 125 125</diffuse>
-      <specular>125 125 125 125</specular>
+      <specular>50 50 50 50</specular>
       <attenuation>
         <range>50</range>
         <constant>0.3</constant>

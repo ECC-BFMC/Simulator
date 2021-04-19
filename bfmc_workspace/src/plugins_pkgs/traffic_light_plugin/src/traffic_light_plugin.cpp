@@ -13,7 +13,7 @@
 #include "std_msgs/Float32.h"
 #include "traffic_light_plugin.hpp"
 
-#define DEBUG true
+#define DEBUG false
 
 namespace gazebo
 {

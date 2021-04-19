@@ -76,8 +76,8 @@ rosrun startup_package main.py
 ---
 
 # Release notes
-- Environmental elements added (people around the map)
-- Ramp added;
-- Made files executable. (BFMC_Simulator/startup_workspace/src/startup_package/src/main.py; BFMC_Simulator/bfmc_workspace/src/sim_pck/launch/bash_script/delay.sh; BFMC_Simulator/bfmc_workspace/src/traffic_light_pkg/src/tl_talker.py; BFMC_Simulator/bfmc_workspace/src/traffic_light_pkg/src/tl_listener.py)
-- Fixed details in guide.
-- Added highwy separators launchers.
+- Added 4 dimensions of the map for better rendering;
+- Implemented the obstacle cars as static for a better real-time factor and for stopping the movement of the cars;
+- Added game like view of the car during the run;
+- Eliminated the collision elements of the traffic  light lens for a better start-up time of the simulator;
+- Added some tips in the guides;

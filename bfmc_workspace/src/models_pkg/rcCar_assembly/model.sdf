@@ -304,7 +304,6 @@
       </physics>
     </joint>
 
-
     <!-- Plugin  -->
     <plugin name='CarLikeRobotPlugin' filename='libcar_plugin.so'>
       <wheelbase>0.26</wheelbase>

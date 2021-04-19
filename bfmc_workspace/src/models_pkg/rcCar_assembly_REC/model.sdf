@@ -1,0 +1,396 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='rcCar'>
+    <include>
+      <uri>model://chassis</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    <!-- including a left rear wheel -->
+    <include>
+      <uri>model://wheel_left</uri>
+      <pose>-0.152 0.081 0 0 0 0</pose>
+      <name>wheel_rear_left</name>
+    </include>
+    <!-- including a front rear wheel -->
+    <include>
+      <uri>model://wheel_right</uri>
+      <pose>-0.152 -0.081 0 0 0 0</pose>
+      <name>wheel_rear_right</name>
+    </include>
+    <!-- including a left steering comp. -->
+    <include>
+      <uri>model://steering_column</uri>
+      <pose>0.112 0.0725 0 0 0 0</pose>
+      <name>steer_left</name>
+    </include>
+    <!-- including a right steering comp. -->
+    <include>
+      <uri>model://steering_column</uri>
+      <pose>0.112 -0.0725 0 0 0 0</pose>
+      <name>steer_right</name>
+    </include>
+    <!-- including a left front wheel -->
+    <include>
+      <uri>model://wheel_left</uri>
+      <pose>0.118 0.081 0 0 0 0</pose>
+      <name>wheel_front_left</name>
+    </include>
+    <!-- including a right front wheel -->
+    <include>
+      <uri>model://wheel_right</uri>
+      <pose>0.118 -0.081 0 0 0 0</pose>
+      <name>wheel_front_right</name>
+    </include>
+    
+    <!-- including the camera link -->
+    <!-- 0.261799388 -->
+    <include>
+      <uri>model://camera</uri>
+      <pose>0 0 0.2 0 0.2617 0</pose>
+      <name>camera</name>
+    </include>
+
+    <!-- including the camera follow link -->
+    <include>
+      <uri>model://camera_follow</uri>
+      <pose>-0.3 0 0.45 0 0.6 0</pose>
+      <name>camera_follow</name>
+    </include>
+
+    <!-- including the camera follow link -->
+    <include>
+      <uri>model://cam_birdeye_REC</uri>
+      <pose>0 0 1.5 0 1.570794 0</pose>
+      <name>cam_birdeye_REC</name>
+    </include>
+
+    <!-- includeing the car body -->
+    <include>
+      <uri>model://car_body</uri>
+      <pose>-0.024 0.0 -0.028 0 0.0 0</pose>
+      <name>car_body</name>
+    </include>
+
+    <!-- LIST OF JOINTS -->
+    <joint name='joint_leftrear_rim' type='revolute'>
+      <parent>chassis::link</parent>
+      <child>wheel_rear_left::link_rim</child>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>1.79769e+308</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+
+    <joint name='joint_rightrear_rim' type='revolute'>
+      <parent>chassis::link</parent>
+      <child>wheel_rear_right::link_rim</child>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>1.79769e+308</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+    
+    <!-- Front right joint between the chassis and the steering comp. -->
+    <joint name='joint_leftfront_steer' type='revolute'>
+      <parent>chassis::link</parent>
+      <child>steer_left::link_steer</child>
+      <pose frame=''>0 0 0.005 0 -0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>1.79769e+308</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+    <!-- Front left joint between the chassis and the steering comp. -->
+    <joint name='joint_rightfront_steer' type='revolute'>
+      <parent>chassis::link</parent>
+      <child>steer_right::link_steer</child>
+      <pose frame=''>0 0 -0.005 0 -0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>1.79769e+308</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- Right joint between the steering and the rim   -->
+    <joint name='joint_rightfront_rim' type='revolute'>
+      <parent>steer_right::link_steer</parent>
+      <child>wheel_front_right::link_rim</child>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>1.79769e+308</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- Left joint between the steering and the rim   -->
+    <joint name='joint_leftfront_rim' type='revolute'>
+      <parent>steer_left::link_steer</parent>
+      <child>wheel_front_left::link_rim</child>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>1.79769e+308</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- fixed joint for the car body -->
+    <joint name='joint_body' type='fixed'>
+      <parent>chassis::link</parent>
+      <child>car_body::link</child>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+
+
+    <!-- fixed joint for the camera -->
+    <joint name='joint_camera' type='fixed'>
+      <parent>chassis::link</parent>
+      <child>camera::link_camera</child>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- fixed joint for the camera follow -->
+    <joint name='joint_camera_follow' type='fixed'>
+      <parent>chassis::link</parent>
+      <child>camera_follow::link_camera</child>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+
+
+    <!-- fixed joint for the camera RECORDING -->
+    <joint name='joint_cam_birdeye_REC' type='fixed'>
+      <parent>chassis::link</parent>
+      <child>cam_birdeye_REC::link_camera</child>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+
+
+    <!-- Plugin  -->
+    <plugin name='CarLikeRobotPlugin' filename='libcar_plugin.so'>
+      <wheelbase>0.26</wheelbase>
+      <axletrack>0.162</axletrack>
+      <wheelradius>0.0325</wheelradius>
+      <speed_wheel_joints> 
+        <front_wheel_joints>
+          <leftjoint>joint_leftfront_rim</leftjoint>
+          <rightjoint>joint_rightfront_rim</rightjoint>
+        </front_wheel_joints>
+        <rear_wheel_joints>
+          <leftjoint>joint_leftrear_rim</leftjoint>
+          <rightjoint>joint_rightrear_rim</rightjoint>
+        </rear_wheel_joints>
+        <kp>0.01</kp>
+        <ki>0.0</ki>
+        <kd>0.0</kd>
+      </speed_wheel_joints>
+      <steer_wheel_joints>
+        <leftjoint>joint_leftfront_steer</leftjoint>
+        <rightjoint>joint_rightfront_steer</rightjoint>
+        <kp>10</kp>
+        <ki>0.0</ki>
+        <kd>0.1</kd>
+      </steer_wheel_joints>
+      <initial_steer>0.0</initial_steer>
+      <initial_speed>0.0</initial_speed>
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+
+    <plugin name='bno055' filename='libbno055_plugin.so'> </plugin>
+    <plugin name='gps' filename='libgps_plugin.so'> </plugin>
+
+
+  </model>
+</sdf>

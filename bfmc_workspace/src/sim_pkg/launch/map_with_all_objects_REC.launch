@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name"   value="$(find sim_pkg)/worlds/world_with_separators.world"/>
+    <arg name="paused"       value="false"/>    
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug"        value="false"/>
+    <arg name="gui"          value="true"/>
+  </include>
+
+  <node name = "delay" pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "0 sim_pkg car_REC.launch"                 	          />
+  <node name = "delay_1"    pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "1 sim_pkg enter_highway_signs.launch"   	  />
+  <node name = "delay_2"  pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "2 sim_pkg leave_highway_signs.launch"   		  />
+  <node name = "delay_3"  pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "3 sim_pkg prohibited_signs.launch"      		  />
+  <node name = "delay_4"  pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "4 sim_pkg oneway_signs.launch"          		  />
+  <node name = "delay_5"  pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "5 sim_pkg parking_signs.launch"         		  />
+  <node name = "delay_6"  pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "6 sim_pkg pedestrian_objects.launch"    		  />
+  <node name = "delay_7"  pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "7 sim_pkg crosswalk_signs.launch"		  />
+  <node name = "delay_8"  pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "8 sim_pkg priority_signs.launch"        		  />
+  <node name = "delay_9"  pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "9 sim_pkg roundabout_signs.launch"      		  />
+  <node name = "delay_10"  pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "10 sim_pkg stop_signs.launch"            	  />
+  <node name = "delay_11" pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "11 sim_pkg obstacle_car.launch"              	  />
+  <node name = "delay_12" pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "12 sim_pkg members.launch"                         />
+  <node name = "delay_13" pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "13 sim_pkg ramp.launch"                            />
+  <node name = "delay_14" pkg = "sim_pkg" type = "delay.sh" output = "screen"  args = "14 sim_pkg traffic_lights.launch"        	  />
+</launch>
