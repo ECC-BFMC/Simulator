@@ -15,6 +15,7 @@ There are **two workspaces**:
 - Install [Ubuntu 18.04.5 LTS (Bionic Beaver)](https://releases.ubuntu.com/18.04/). For best performances, avoid using a virtual machine.
 - Install [ROS Melodic](https://wiki.ros.org/melodic/Installation/Ubuntu). We suggest using the Desktop Full Install. Make sure you follow all the instructions and pay attention to the ***Initialize rosdep*** subchapter.
 - Install [Gazebo9](https://zoomadmin.com/HowToInstall/UbuntuPackage/gazebo9).
+- Update to Gazebo > 9.15 (http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=9.0).
 - Quick [YouTube tutorial for workspace setup](https://www.youtube.com/watch?v=sIydBiat4bc&feature=emb_logo&ab_channel=BoschRomania).
      
 ### Workspace Setup
@@ -83,4 +84,4 @@ rosrun startup_package main.py
 - Added some tips in the guides;
 - Added roadblock;
 - Changed pedestrian to doll-like shape;
-- New Gazebo version required: > Gazebo 9.15
+- New Gazebo version required: > Gazebo 9.15 ===> after the isntallation, clean the bfmc_workspace, fix missing packages (if there is any, re-build and run. 
