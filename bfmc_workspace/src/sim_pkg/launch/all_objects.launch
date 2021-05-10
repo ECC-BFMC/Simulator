@@ -15,5 +15,6 @@
   <include file = "$(find sim_pkg)/launch/sublaunchers/obstacle_car.launch"         />
   <include file = "$(find sim_pkg)/launch/sublaunchers/members.launch"              />
   <include file = "$(find sim_pkg)/launch/sublaunchers/ramp.launch"                 />
+  <include file = "$(find sim_pkg)/launch/sublaunchers/roadblock.launch"            />
   <include file = "$(find sim_pkg)/launch/sublaunchers/traffic_lights.launch"       />
 </launch>

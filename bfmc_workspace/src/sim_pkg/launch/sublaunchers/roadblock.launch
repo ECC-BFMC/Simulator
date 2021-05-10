@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+<!-- Go left -->
+
+<!--  <node
+        name  = "roadblock"
+        pkg   = "gazebo_ros"
+        type  = "spawn_model"
+        args  = "-file $(find models_pkg)/roadblock/model.sdf -sdf -model roadblock -x 3.054809 -y -8.697316 -z 0.0 -R 0 -P 0 -Y -1.569651"/>  
+-->
+
+
+<!-- Go right -->
+  <node
+        name  = "roadblock"
+        pkg   = "gazebo_ros"
+        type  = "spawn_model"
+        args  = "-file $(find models_pkg)/roadblock/model.sdf -sdf -model roadblock -x 2.682368 -y -8.696889 -z 0.0 -R 0 -P 0 -Y 1.569651"/>  
+ </launch>
