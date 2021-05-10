@@ -81,3 +81,6 @@ rosrun startup_package main.py
 - Added game like view of the car during the run;
 - Eliminated the collision elements of the traffic  light lens for a better start-up time of the simulator;
 - Added some tips in the guides;
+- Added roadblock;
+- Changed pedestrian to doll-like shape;
+- New Gazebo version required: > Gazebo 9.15
