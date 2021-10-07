@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <node
+      name  = "tltalker"
+      pkg   = "traffic_light_pkg"
+      type  = "tl_talker.py"
+  />
+  <!-- TRAFFIC LIGHTS -->
+  <node
+      name  = "start"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/traffic_light/model.sdf -sdf -model start -x 1.132 -y -14.403 -z 0 -R 0 -P 0 -Y 4.712388"/>
+
+  <node
+      name  = "master"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/traffic_light/model.sdf -sdf -model master -x 2.030 -y -11.132 -z 0 -R 0 -P 0 -Y 3.141592"/>
+
+  <node
+      name  = "slave"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/traffic_light/model.sdf -sdf -model slave -x 3.744 -y -10.140 -z 0 -R 0 -P 0 -Y 0"/>
+  
+  <node
+      name  = "antimaster"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/traffic_light/model.sdf -sdf -model antimaster -x 3.347 -y -11.483 -z 0 -R 0 -P 0 -Y 4.712388"/>
+
+</launch>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<package format="2">
+
+  <name>car_plugin</name>
+  <version>1.0.0</version>
+  <description>The car package (which is a plugin)</description>
+    <maintainer email="rares.lemnariu@ro.bosch.com"> Rares Lemnariu </maintainer>
+    <license>Bosch ECC</license>
+
+  
+  <depend>std_msgs</depend>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>gazebo_ros</build_depend>
+  <build_depend>roscpp</build_depend>
+
+  <build_export_depend>gazebo_ros</build_export_depend>
+  <build_export_depend>roscpp</build_export_depend>
+
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+
+</package>

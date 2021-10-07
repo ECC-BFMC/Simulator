@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  
+  <!-- PRIORITY SIGNS -->
+  <node
+	name  = "PRIOR_D"
+	pkg   = "gazebo_ros"
+	type  = "spawn_model"
+	args  = "-file $(find models_pkg)/priority_sign/model.sdf -sdf -model PRIOR_D -x 3.675 -y -13.050 -z 0.078998 -R 0  -P 0  -Y 3.141592"/>
+
+  <node
+	name  = "PRIOR_F"
+	pkg   = "gazebo_ros"
+	type  = "spawn_model"
+	args  = "-file $(find models_pkg)/priority_sign/model.sdf -sdf -model PRIOR_F -x 0.204 -y -6.031 -z 0.078998 -R 0  -P 0  -Y 4.712388"/>
+
+  <node
+	name  = "PRIOR_H"
+	pkg   = "gazebo_ros"
+	type  = "spawn_model"
+	args  = "-file $(find models_pkg)/priority_sign/model.sdf -sdf -model PRIOR_H -x 5.544 -y -11.381 -z 0.078998 -R 0  -P 0  -Y 1.570796"/>
+
+  <node
+	name  = "PRIOR_I"
+	pkg   = "gazebo_ros"
+	type  = "spawn_model"
+	args  = "-file $(find models_pkg)/priority_sign/model.sdf -sdf -model PRIOR_I -x 4.589 -y -5.997 -z 0.078998 -R 0  -P 0  -Y 4.712388"/>
+
+</launch>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- PARKING SIGNS -->
+  <node
+      name  = "PRK_P1"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/parking_sign/model.sdf -sdf -model PRK_P1 -x 4.047 -y -2.358 -z 0.078998 -R 0  -P 0  -Y 0"/>
+
+  <node
+      name  = "PRK_P2"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/parking_sign/model.sdf -sdf -model PRK_P2 -x 2.857 -y -2.358 -z 0.078998 -R 0  -P 0  -Y 0"/>
+  
+  <node
+      name  = "PRK_P3"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/parking_sign/model.sdf -sdf -model PRK_P3 -x 2.779 -y -1.452 -z 0.078998 -R 0  -P 0  -Y 3.141592"/>
+  
+  <node
+      name  = "PRK_P4"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/parking_sign/model.sdf -sdf -model PRK_P4 -x 4.459 -y -1.452 -z 0.078998 -R 0  -P 0  -Y 3.141592"/>
+
+</launch>

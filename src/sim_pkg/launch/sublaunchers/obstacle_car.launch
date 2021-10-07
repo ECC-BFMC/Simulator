@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+  <launch>
+ 
+    <node
+       name  = "obstacle_rcCar_1"
+       pkg   = "gazebo_ros"
+       type  = "spawn_model"
+       args  = "-file $(find models_pkg)/rcCar_assembly_obstacle/model.sdf -model obstacle_rcCar_1 -sdf -x 3.703 -y -2.580 -z 0.032939 -Y 1.567"/>
+ 
+    <node
+       name  = "obstacle_rcCar_2"
+       pkg   = "gazebo_ros"
+       type  = "spawn_model"
+       args  = "-file $(find models_pkg)/rcCar_assembly_obstacle/model.sdf -model obstacle_rcCar_2 -sdf -x 3.999 -y -1.376 -z 0.032939 -Y 3.137"/>
+
+   <node
+       name  = "obstacle_rcCar_3"
+       pkg   = "gazebo_ros"
+       type  = "spawn_model"
+       args  = "-file $(find models_pkg)/rcCar_assembly_obstacle/model.sdf -model obstacle_rcCar_3 -sdf -x 8.140 -y -2.096 -z 0.032939 -Y 0"/>
+   <node
+       name  = "obstacle_rcCar_4"
+       pkg   = "gazebo_ros"
+       type  = "spawn_model"
+       args  = "-file $(find models_pkg)/rcCar_assembly_obstacle/model.sdf -model obstacle_rcCar_4 -sdf -x 9.607 -y -1.713 -z 0.032939 -Y 3.137"/>
+ 
+   <node
+       name  = "obstacle_rcCar_5"
+       pkg   = "gazebo_ros"
+       type  = "spawn_model"
+       args  = "-file $(find models_pkg)/rcCar_assembly_obstacle/model.sdf -model obstacle_rcCar_5 -sdf -x 9.503 -y -8.615 -z 0.032939 -Y -1.306"/>
+
+   <node
+       name  = "obstacle_rcCar_6"
+       pkg   = "gazebo_ros"
+       type  = "spawn_model"
+       args  = "-file $(find models_pkg)/rcCar_assembly_obstacle/model.sdf -model obstacle_rcCar_6 -sdf -x 11.108 -y -10.675 -z 0.032939 -Y 1.523"/>
+  </launch>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- TRAFFIC LIGHTS CONTROLLER -->
+  <node
+    name  = "tltalker"
+    pkg   = "traffic_light_pkg"
+    type  = "tl_talker.py"
+  />
+
+</launch>

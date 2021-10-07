@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- =================================================================================================TEAM ALPHA -->
+  <node
+      name  = "APHA_P_1"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_alpha_d/model.sdf -sdf -model APHA_P_1 -x -3.13 -y -6.16 -z 0.0 -R 0 -P 0 -Y 0.0"/>  
+  <node
+name  = "APHA_P_2"
+pkg   = "gazebo_ros"
+type  = "spawn_model"
+args  = "-file $(find models_pkg)/p_alpha_s/model.sdf -sdf -model APHA_P_2 -x -1.9 -y -3.19 -z 0.0 -R 0 -P 0 -Y 1.53"/>
+<node
+      name  = "APHA_P_3"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_alpha_d/model.sdf -sdf -model APHA_P_3 -x -3.8 -y -6.47 -z 0.0 -R 0 -P 0 -Y 0.0"/>
+  <node
+      name  = "APHA_P_4"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_alpha_s/model.sdf -sdf -model APHA_P_4 -x -1.6 -y -5.81 -z 0.0 -R 0 -P 0 -Y 1.48"/>
+  <node
+      name  = "APHA_P_5"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_alpha_s/model.sdf -sdf -model APHA_P_5 -x -1.33 -y -4.62 -z 0.0 -R 0 -P 0 -Y 2.01"/>
+  <!-- =================================================================================================TEAM ALPHA -->
+
+  <!-- =================================================================================================TEAM BETA -->
+  <node
+      name  = "BETA_P_1"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_beta_s/model.sdf -sdf -model BETA_P_1 -x 17.5 -y -2.23 -z 0.0 -R 0 -P 0 -Y 0.0"/>  
+  <node
+      name  = "BETA_P_2"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_beta_s/model.sdf -sdf -model BETA_P_2 -x 16.32 -y -1.81 -z 0.0 -R 0 -P 0 -Y 0.0"/>
+  <node
+      name  = "BETA_P_3"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_beta_s/model.sdf -sdf -model BETA_P_3 -x 16.67 -y 6.09 -z 0.0 -R 0 -P 0 -Y -1.95"/>
+  <node
+      name  = "BETA_P_4"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_beta_d/model.sdf -sdf -model BETA_P_4 -x 17.72 -y -3.42 -z 0.0 -R 0 -P 0 -Y 0.0"/>
+  <node
+      name  = "BETA_P_5"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_beta_s/model.sdf -sdf -model BETA_P_5 -x 16.81 -y 7.95 -z 0.0 -R 0 -P 0 -Y -1.34"/>
+  <!-- =================================================================================================TEAM BETA -->
+
+  <!-- =================================================================================================TEAM ORG -->
+  <node
+      name  = "ORG_P_1"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_organizing_d/model.sdf -sdf -model ORG_P_1 -x 4.4 -y -18.07 -z 0.0 -R 0 -P 0 -Y 0.0"/>  
+  <node
+      name  = "ORG_P_2"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_organizing_d/model.sdf -sdf -model ORG_P_2 -x 4.94 -y -18.64 -z 0.0 -R 0 -P 0 -Y 0.0"/>
+  <node
+      name  = "ORG_P_3"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_organizing_s/model.sdf -sdf -model ORG_P_3 -x 5.25 -y -16.06 -z 0.0 -R 0 -P 0 -Y -2.91"/>
+  <node
+      name  = "ORG_P_4"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_organizing_s/model.sdf -sdf -model ORG_P_4 -x 6.81 -y -16.9 -z 0.0 -R 0 -P 0 -Y 3.05"/>
+  <node
+      name  = "ORG_P_5"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_organizing_s/model.sdf -sdf -model ORG_P_5 -x 6.08 -y -16.15 -z 0.0 -R 0 -P 0 -Y 3.10"/>
+  <!-- =================================================================================================TEAM ORG -->
+
+
+  <!-- =================================================================================================TEAM GAMMA -->
+  <node
+      name  = "GAMMA_P_1"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_gamma_d/model.sdf -sdf -model GAMMA_P_1 -x -1.22 -y 0.19 -z 0.0 -R 0 -P 0 -Y 0.0"/>  
+  <node
+      name  = "GAMMA_P_2"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_gamma_s/model.sdf -sdf -model GAMMA_P_2 -x 8.18 -y 2.17 -z 0.0 -R 0 -P 0 -Y 0.0"/>
+  <node
+      name  = "GAMMA_P_3"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_gamma_s/model.sdf -sdf -model GAMMA_P_3 -x 8.88 -y 2.07 -z 0.0 -R 0 -P 0 -Y 0.0"/>
+  <node
+      name  = "GAMMA_P_4"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_gamma_s/model.sdf -sdf -model GAMMA_P_4 -x 17.12 -y -11.22 -z 0.0 -R 0 -P 0 -Y -1.7"/>
+  <node
+      name  = "GAMMA_P_5"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/p_gamma_s/model.sdf -sdf -model GAMMA_P_5 -x 16.72 -y -11.22 -z 0.0 -R 0 -P 0 -Y -1.7"/>
+  <!-- =================================================================================================TEAM GAMMA -->
+</launch>

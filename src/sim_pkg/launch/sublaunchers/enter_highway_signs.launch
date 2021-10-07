@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- ENTER HIGHWAY SIGNS -->
+  <node
+      name  = "EHIGH_T"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/enter_highway_sign/model.sdf -sdf -model EHIGH_T -x 5.871 -y -13.970 -z 0.078998 -R 0  -P 0  -Y 3.141592"/>
+
+  <node
+      name  = "EHIGH_Y"
+      pkg   = "gazebo_ros"
+      type  = "spawn_model"
+      args  = "-file $(find models_pkg)/enter_highway_sign/model.sdf -sdf -model EHIGH_Y -x 9.412 -y -4.850 -z 0.078998 -R 0  -P 0  -Y 1.570796"/>
+
+</launch>
