@@ -1,8 +1,9 @@
-# Gazebo & ROS Simulator
+# BFMC Simulator Project
 
-![|Solid](https://www.streetdrone.com/wp-content/uploads/2020/05/ros-02.png)
+The project contains the entire Gazebo simulator developed by the organizing team as well as a ROS nod network example for gathering data from the simulator and controlling the car. 
 
-_________________
+By following the guide below you can get started with the simulator and start developing your project!
+
 
 ## 1. Installing the tools
 - Install [Ubuntu 20.04.2.0 LTS (Focal Fossa) ](https://releases.ubuntu.com/20.04/) - Desktop Image. For best performances, avoid using a virtual machine.
@@ -102,9 +103,6 @@ We suggest, if you plan to develop on the PC, to create another workspace for th
 
 
 ## 6. Camera Setup
-
-[![|Solid]( https://cdn.shopify.com/s/files/1/2187/3161/products/aa784c9b38749245b6a4651ea5aaefda_128x.png?v=1571708699 )](http://gazebosim.org/tutorials?tut=ros_gzplugins)
-
 
 ### 6.1 Change Resolution
 
