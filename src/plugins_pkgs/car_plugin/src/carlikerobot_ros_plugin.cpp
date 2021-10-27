@@ -91,16 +91,16 @@ namespace gazebo
         	if (doc.HasMember("action"))
 		    {
 			    std::string command = doc["action"].GetString();
-		    	if(command =="SPED")
+		    	if(command =="1")
 		    	{
 		    		if (DEBUG){ROS_INFO_STREAM("Received SPED message");}
 		    		if (doc.HasMember("speed")){ this->spedMessage(doc["speed"].GetFloat());}
 		    		else{ROS_INFO_STREAM("Invalid message"); this->unknownMessage();}
-		    	} else if (command =="STER") {
+		    	} else if (command =="2") {
 				    if (DEBUG){ROS_INFO_STREAM("Received STER message");}
 				    if (doc.HasMember("steerAngle")){ this->sterMessage(doc["steerAngle"].GetFloat());}
 		    		else{ROS_INFO_STREAM("Invalid message"); this->unknownMessage();}
-		    	} else if (command =="BRAK") {
+		    	} else if (command =="3") {
 		            if (DEBUG){ROS_INFO_STREAM("Received BRAKE message");}
 		            if (doc.HasMember("steerAngle")){ this->brakeMessage(doc["steerAngle"].GetFloat());}
 		    		else{ROS_INFO_STREAM("Invalid message"); this->unknownMessage();}
@@ -127,7 +127,7 @@ namespace gazebo
             _robotSetter->f_steer = _msg_val;
             _robotSetter->setCommand();
             std_msgs::String l_resp;
-            l_resp.data= "@BRAKE:ack;;";
+            l_resp.data= "@3:ack;;";
             this->_feedbackPublisher.publish(l_resp);
         }
 
@@ -136,7 +136,7 @@ namespace gazebo
             _robotSetter->f_speed = _msg_val;
             _robotSetter->setCommand();
             std_msgs::String l_resp;
-            l_resp.data = "@SPED:ack;;";
+            l_resp.data = "@1:ack;;";
             this->_feedbackPublisher.publish(l_resp);
         }
 
@@ -145,7 +145,7 @@ namespace gazebo
             _robotSetter->f_steer = _msg_val;
             _robotSetter->setCommand();
             std_msgs::String l_resp;
-            l_resp.data = "@STER:ack;;";
+            l_resp.data = "@2:ack;;";
             this->_feedbackPublisher.publish(l_resp);
         }
 
