@@ -104,8 +104,8 @@ class RcBrainThread:
             "\nmaxSteerAngle: " + str(self.configParam.maxSteerAngle) + '[Y/H]' +
             "\nacceleration:  " + str(self.configParam.speedStep) +     '[U/J]' +
             "\nsteerStep:     " + str(self.configParam.steerAngleStep) +'[I/K]' +
-            '\nReset Params:                                             [ R ]' +
-            '\nCtrl+C to exit'
+            '\nReset Params:  [R]' +
+            '\nExit           [Esc]'
         )
     # ===================================== STATE DICT ===================================
     def _stateDict(self):
