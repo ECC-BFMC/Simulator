@@ -125,5 +125,3 @@ namespace gazebo
         
     }; // namespace carlikerobot
 }; // gazebo
-
-#endif
