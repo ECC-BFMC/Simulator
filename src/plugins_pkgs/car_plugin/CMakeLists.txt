@@ -26,7 +26,7 @@ add_library(car_plugin SHARED src/carlikerobot_ros_plugin.cpp src/carlikerobot.c
 
 target_link_libraries(car_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
 
-add_dependencies(car_plugin)
+
 
 
 catkin_package(

@@ -150,8 +150,8 @@ class RcBrainThread:
         else:
             return None
             
-        print(data)
         return data
+        
     # ========================= CALLBACK =================================================
     def getMessage(self,data):
         """ Generate the message based on the current pressed or released key and the current state. 
@@ -351,3 +351,4 @@ class RcBrainThread:
             self.currentState[4] = False
 
         
+

@@ -1,17 +1,5 @@
 #pragma once
 
-#include <gazebo/gazebo.hh>
-#include <gazebo/common/Plugin.hh>
-#include <gazebo/physics/physics.hh>
-#include <gazebo/common/common.hh>
-#include <ignition/math/Vector3.hh>
-
-#define _USE_MATH_DEFINES
-#include <cmath>
-#include <chrono>
-#include <thread>
-#include <string>
-
 // The Rc car model name in the Gazebo simulator
 #define RC_CAR_NAME "rcCar"
 
