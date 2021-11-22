@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='rcCar_assembly_obstacle'>
+  <model name='automobile_obstacle'>
       <static>true</static>
     <include>
       <uri>model://chassis</uri>

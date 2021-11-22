@@ -58,8 +58,8 @@ class RemoteControlTransmitterProcess():
     def run(self):
         """Apply initializing methods and start the threads. 
         """
-        with keyboard.Listener(on_press = self.keyPress, on_release = self.keyRelease) as self.listener: 
-            self.listener.join()
+        with keyboard.Listener(on_press = self.keyPress, on_release = self.keyRelease) as listener: 
+            listener.join()
 	
     # ===================================== KEY PRESS ====================================
     def keyPress(self,key):
@@ -89,7 +89,7 @@ class RemoteControlTransmitterProcess():
         
         """ 
         if key == keyboard.Key.esc:                        #exit key      
-            self.publisher.publish("{'action':'3','steerAngle':0}")   
+            self.publisher.publish('{"action":"3","steerAngle":0.0}')   
             return False
         try:                                               
             if key.char in self.allKeys:
