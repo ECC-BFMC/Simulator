@@ -20,6 +20,7 @@ Clone the repository inside the `Documents` folder (or perform a commit on the r
 - Open a terminal in `~/Documents/Simulator` directory and run the following command:
 
 ```sh
+catkin_make --pkg utils
 catkin_make
 ```
 

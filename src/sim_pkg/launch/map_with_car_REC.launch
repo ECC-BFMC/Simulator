@@ -9,5 +9,5 @@
     <arg name="gui"          value="false"/>
   </include>
  
-  <include file = "$(find sim_pkg)/launch/sublaunchers/car_REC.launch"                  />
+  <node pkg="sim_pkg" type="delay.sh" args="5 sim_pkg car_rec.launch" name="car_rec" output="screen"/>
   </launch>
