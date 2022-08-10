@@ -1,4 +1,6 @@
 ![alt text](https://github.com/ECC-BFMC/Simulator/blob/main/Picture1.png | height=80)
+<img src="https://github.com/ECC-BFMC/Simulator/blob/main/Picture1.png" width=50% height=50%>
+
 # BFMC Simulator Project
 
 The project contains the entire Gazebo simulator developed by the organizing team as well as a ROS nod network example for gathering data from the simulator and controlling the car. 
