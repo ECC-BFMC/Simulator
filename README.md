@@ -1,5 +1,4 @@
-![alt text](https://github.com/ECC-BFMC/Simulator/blob/main/Picture1.png | height=80)
-<img src="https://github.com/ECC-BFMC/Simulator/blob/main/Picture1.png" width=50% height=50%>
+<img src="https://github.com/ECC-BFMC/Simulator/blob/main/Picture1.png" width=30% height=30%>
 
 # BFMC Simulator Project
 
