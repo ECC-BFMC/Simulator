@@ -1,3 +1,4 @@
+![alt text]([http://url/to/img.png](https://mega.nz/file/2epHVZZD#u7vyozzpMDg5jjxB-SWkC_GrXJIpWu-yjFNbaoPOcac))
 # BFMC Simulator Project
 
 The project contains the entire Gazebo simulator developed by the organizing team as well as a ROS nod network example for gathering data from the simulator and controlling the car. 
